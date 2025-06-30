@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denis Kinyua - ML Engineer & Security Specialist</title>
+    <title>Denis Kinyua Kamachu - ML Engineer & Security Specialist</title>
     <style>
         * {
             margin: 0;
@@ -106,14 +106,30 @@
             width: 100%;
         }
 
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             background: var(--dark);
-            padding-top: 80px; /* Added for fixed header */
+            padding-top: 80px;
         }
 
         .hero-content {
@@ -144,6 +160,17 @@
             color: var(--text-muted);
             font-size: 1.1rem;
             line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-text li {
+            margin-bottom: 0.5rem;
         }
 
         .cta-button {
@@ -157,6 +184,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            margin-top: 2rem;
         }
 
         .cta-button::before {
@@ -238,14 +266,13 @@
             font-weight: 600;
         }
 
-        /* Skills Section */
-        .skills {
+        /* Section Styles */
+        .section {
             padding: 5rem 0;
-            background: var(--dark);
             position: relative;
         }
 
-        .skills::before {
+        .section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -348,25 +375,6 @@
         }
 
         /* Projects Section */
-        .projects {
-            padding: 5rem 0;
-            background: var(--darker);
-            position: relative;
-        }
-
-        .projects::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 60% 30%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 20% 70%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -422,11 +430,21 @@
             margin-bottom: 1rem;
         }
 
+        .project-card ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .project-card li {
+            margin-bottom: 0.3rem;
+        }
+
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1rem;
+            margin: 1rem 0;
         }
 
         .tech-tag {
@@ -466,22 +484,12 @@
 
         /* Contact Section */
         .contact {
-            padding: 5rem 0;
-            background: var(--dark);
             text-align: center;
-            position: relative;
+            background: var(--dark);
         }
 
         .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
         }
 
         .contact-content {
@@ -562,6 +570,10 @@
             animation: fadeInUp 0.8s ease forwards;
         }
 
+        /* Background Variations */
+        .bg-dark { background: var(--dark); }
+        .bg-darker { background: var(--darker); }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-text h1 {
@@ -576,7 +588,7 @@
         @media (max-width: 768px) {
             .hero {
                 padding-top: 70px;
-                height: auto;
+                min-height: auto;
                 padding-bottom: 4rem;
             }
 
@@ -594,8 +606,41 @@
                 font-size: 1.1rem;
             }
 
+            /* Mobile Navigation */
             .nav-links {
-                gap: 1rem;
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: rgba(10, 10, 15, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+                gap: 2rem;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
             }
 
             .skills-grid,
@@ -625,23 +670,27 @@
             }
 
             .nav-links {
-                gap: 0.8rem;
+                gap: 1.5rem;
             }
 
             .nav-links a {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             .hero-text h1 {
                 font-size: 2rem;
+                line-height: 1.2;
             }
 
             .section-title {
                 font-size: 2rem;
+                margin-bottom: 2rem;
             }
 
             .tech-grid {
                 grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 0 auto;
             }
 
             .project-card h3 {
@@ -651,46 +700,34 @@
             .project-card p {
                 font-size: 0.95rem;
             }
+
+            .skill-category, .project-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .hero-text ul {
+                padding-left: 1rem;
+            }
+
+            .hero-text li {
+                font-size: 0.95rem;
+            }
+
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
         }
 
-        /* Mobile menu toggle */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        @media (max-width: 640px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--dark);
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem 0;
-                gap: 1rem;
-                border-bottom: 1px solid var(--border);
-                transform: translateY(-150%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .nav-links a {
-                padding: 0.5rem 0;
+        /* Fix for mobile viewport height */
+        @media (max-height: 700px) and (max-width: 768px) {
+            .hero {
+                min-height: 100vh;
+                padding-bottom: 2rem;
             }
         }
     </style>
@@ -699,9 +736,14 @@
     <header>
         <nav class="container">
             <div class="logo">Denis Kinyua</div>
-            <div class="menu-toggle">☰</div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -715,8 +757,13 @@
                 <div class="hero-text">
                     <h1>Denis Kinyua Kamachu</h1>
                     <p class="subtitle">Machine Learning Engineer & Cybersecurity Specialist</p>
-                    <p>Passionate about building intelligent systems and securing digital infrastructure through innovative Python solutions and MLOps practices.</p>
-                    <br>
+                    <p>Passionate about building intelligent systems and securing digital infrastructure through innovative Python solutions and MLOps practices. Specialist with 3+ years of experience designing AI solutions and hardening systems against threats.</p>
+                    <p><strong>Proven track record of:</strong></p>
+                    <ul>
+                        <li>Deploying ML models with 95%+ accuracy in production</li>
+                        <li>Building security tools that reduced vulnerabilities by 40%</li>
+                        <li>Creating full-stack applications with Flask and MLOps pipelines</li>
+                    </ul>
                     <a href="#projects" class="cta-button">View My Work</a>
                 </div>
                 <div class="hero-visual">
@@ -743,7 +790,31 @@
         </div>
     </section>
 
-    <section id="skills" class="skills">
+    <section id="education" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title">Education & Credentials</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🎓 Bachelor of Science in Information Technology</h3>
+                    <ul class="skill-list">
+                        <li><strong>Murang'a University of Technology</strong> (2020–2025)</li>
+                        <li><strong>Grade:</strong> Second Class Upper Division</li>
+                        <li><strong>Key Courses:</strong> AI & Machine Learning, Cryptography, Data Structures and Algorithms, Network Management, Software Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🎓 Kenya Certificate of Secondary Education</h3>
+                    <ul class="skill-list">
+                        <li><strong>Njiiri School</strong> (2016–2019)</li>
+                        <li><strong>Grade:</strong> B- (Mean Grade)</li>
+                        <li><strong>Key Subjects:</strong> Mathematics, English, Kiswahili, Biology, Physics, Chemistry, CRE, German</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section bg-dark">
         <div class="container">
             <h2 class="section-title">Technical Expertise</h2>
             <div class="skills-grid">
@@ -798,20 +869,66 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="certifications" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🔐 Cisco Networking Academy</h3>
+                    <ul class="skill-list">
+                        <li><strong>Cyber Security</strong> (2023)</li>
+                        <li><strong>Data Science</strong> (2023)</li>
+                        <li><strong>Networking Management</strong> (2022)</li>
+                        <li><strong>Internet of Things (IoT)</strong> (2022)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🎓 Udemy Academy</h3>
+                    <ul class="skill-list">
+                        <li><strong>Certified Professional IT Manager (CPIT)</strong> (2023)</li>
+                        <li><strong>Ethical Hacking</strong> (2022)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-dark">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <h3>🎬 Movie Recommendation System</h3>
+                    <p>Movie recommendation engine to suggest similar movies based on user preferences and movie metadata. The system uses a content-based filtering approach and is being extended to incorporate collaborative filtering using user ratings.</p>
+                    <ul>
+                        <li>Built a content-based recommendation model using CountVectorizer and cosine similarity</li>
+                        <li>Implemented recommendation function suggesting top 10 similar movies</li>
+                        <li>Integrating collaborative filtering for personalized recommendations</li>
+                        <li>Improving recommendation quality using additional metadata</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Content-Based Filtering</span>
+                    </div>
+                    <a href="https://github.com/kinyuadennis/recommendation-system-with-machine-learnig" class="project-link" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
                     <h3>🏥 Patient Visit Prediction System</h3>
-                    <p>Built and deployed a machine learning model to predict patient visits using XGBoost and linear regression. Implemented complete MLOps pipeline with MLflow for experiment tracking, model versioning, and performance monitoring.</p>
+                    <p>Built and deployed a machine learning model to predict patient visits using XGBoost and linear regression. Implemented complete MLOps pipeline with MLflow for experiment tracking, model versioning, and performance monitoring.The model helps healthcare facilities:</p>
+                 <ul><li>optimize resource allocation and staff scheduling</li> 
+                        <li>capacity planning by predicting daily, weekly, and monthly patient visit trends</li>
+                        <li>This predictive system ultimately reduces patient wait times, minimizes resource waste, and improves overall healthcare delivery efficiency by enabling proactive decision-making based on anticipated patient demand.</li></ul>
                     <div class="project-tech">
                         <span class="tech-tag">XGBoost</span>
                         <span class="tech-tag">MLflow</span>
                         <span class="tech-tag">Flask</span>
                         <span class="tech-tag">scikit-learn</span>
-                        <span class="tech-tag">pandas</span>
-                    </div>
+                        <span class="tech-tag">pandas</span></div>
                     <a href="https://github.com/kinyuadennis/machine-learning" class="project-link" target="_blank">View on GitHub</a>
                 </div>
 
@@ -825,20 +942,26 @@
                         <span class="tech-tag">Network Security</span>
                         <span class="tech-tag">Dashboard</span>
                     </div>
-                    <a href="https://github.com/kinyuadennis/QR-CODE-scanner" class="project-link" target="_blank">View on GitHub</a>
+                     <a href="https://github.com/kinyuadennis/QR-CODE-scanner" class="project-link" target="_blank">View on GitHub</a>
                 </div>
 
                 <div class="project-card">
-                    <h3>⛽ Petrol Station Management System</h3>
-                    <p>Full-stack web application for managing petrol station operations including pump tracking, sales logging, and staff records. Built with Flask backend and SQLite database with comprehensive reporting features.</p>
-                    <div class="project-tech">
+                    <h3>Grocery Store system</h3>
+                    <p>Developed a lightweight inventory management system tailored for a grocery store.<br> The system enables the addition of new stock items, tracks inventory levels, and maintains a full transaction history for all stock changes.<br>Built with Flask backend and SQLite database with comprehensive reporting features.</p>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>CRUD operations in Python</li>
+        <li>Working with file/database persistence</li>
+        <li>Working with file/database persistence</li>
+        <li>Creating full-stack applications with Flask and MLOps pipelines</li>
+    </ul>
+               <div class="project-tech">
                         <span class="tech-tag">Flask</span>
                         <span class="tech-tag">SQLite</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Tkinter/CLI</span>
+                        <span class="tech-tag">Python</span>
                         <span class="tech-tag">Database Design</span>
                     </div>
-                    <a href="https://github.com/kinyuadennis/ petrol-management-system-POS" class="project-link" target="_blank">View on GitHub</a>
+                     <a href="https://github.com/kinyuadennis/grocery-store-sytem" class="project-link" target="_blank">View on GitHub</a>
                 </div>
 
                 <div class="project-card">
@@ -851,7 +974,7 @@
                         <span class="tech-tag">Model Deployment</span>
                         <span class="tech-tag">Automation</span>
                     </div>
-                    <a href="https://github.com/kinyuadennis/Machine-learning" class="project-link" target="_blank">View on GitHub</a>
+                     <a href="https://github.com/kinyuadennis/recommendation-system" class="project-link" target="_blank">View on GitHub</a>
                 </div>
 
                 <div class="project-card">
@@ -864,7 +987,7 @@
                         <span class="tech-tag">Data Analysis</span>
                         <span class="tech-tag">Automation</span>
                     </div>
-                    <a href="https://github.com/kinyuadennis/security-osint-tool" class="project-link" target="_blank"> Development in progress</a>
+                     <a href="https://github.com/kinyuadennis/QR-CODE-scanner" class="project-link" target="_blank">View on GitHub</a>
                 </div>
 
                 <div class="project-card">
@@ -877,7 +1000,7 @@
                         <span class="tech-tag">Statistical Analysis</span>
                         <span class="tech-tag">Data Science</span>
                     </div>
-                    <a href="https://github.com/kinyuadennis/feature-engineering-toolkit" class="project-link" target="_blank">Development in progress</a>
+                     <a href="https://github.com/kinyuadennis/machine-learning" class="project-link" target="_blank">Development in progress</a>
                 </div>
             </div>
         </div>
@@ -890,14 +1013,33 @@
                 <p>I'm always interested in discussing new opportunities, collaborating on innovative projects, or sharing knowledge about machine learning and cybersecurity.</p>
                 <div class="contact-links">
                     <a href="mailto:kinyuadenno1@gmail.com" class="contact-link">📧 Email</a>
-                    <a href="https://linkedin.com/in/denniskinyua" class="contact-link" target="_blank">💼 LinkedIn</a>
-                    <a href="https://github.com/kinyuadennis" class="contact-link" target="_blank">🐙 GitHub</a>
+                    <a href="https://linkedin.com/in/Denniskinyua" class="contact-link">💼 LinkedIn</a>
+                    <a href="https://github.com/kinyuadennis" class="contact-link">🐙 GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -907,20 +1049,7 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
-                
-                // Close mobile menu if open
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
             });
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
         });
 
         // Add animation on scroll
@@ -960,6 +1089,15 @@
                 link.style.color = link.getAttribute('href').slice(1) === current ? '#00d4ff' : '#a1a1aa';
             });
         });
+
+        // Fix for mobile viewport height
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
     </script>
 </body>
 </html>
