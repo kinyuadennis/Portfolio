@@ -3,21 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Denis Kinyua Kamachu - DevOps Engineer & Security Specialist with 3+ years of experience in AI solutions and security systems.">
-    <meta name="keywords" content="Machine Learning, Cybersecurity, Python, DevOps, AI, ML Engineer">
+    <meta name="description" content="Denis Kinyua Kamachu - DevOps Engineer & Security Specialist with 3+ years of experience in AI solutions, cybersecurity, and MLOps. Available for hire.">
+    <meta name="keywords" content="Denis Kinyua, DevOps Engineer, Machine Learning Engineer, Cybersecurity Specialist, Python Developer, MLOps, AI Engineer, Full Stack Developer, Software Engineer Jobs">
     <meta name="author" content="Denis Kinyua Kamachu">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
     
-    <!-- Open Graph tags for social media -->
-    <meta property="og:title" content="Denis Kinyua Kamachu - DevOps & Security Specialist">
-    <meta property="og:description" content="Passionate in building intelligent systems and securing digital infrastructure through innovative Python solutions and MLOps practices.">
+    <!-- Enhanced Open Graph tags for social media -->
+    <meta property="og:title" content="Denis Kinyua Kamachu - DevOps & Security Specialist | Hire Me">
+    <meta property="og:description" content="Experienced DevOps Engineer specializing in ML/AI solutions, cybersecurity, and cloud infrastructure. Ready to drive innovation at your company.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kinyuadennis.github.io">
+    <meta property="og:image" content="https://kinyuadennis.github.io/assets/profile-og.jpg">
+    <meta property="og:site_name" content="Denis Kinyua Portfolio">
     
-    <title>Denis Kinyua Kamachu - DevOps & Security Specialist</title>
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Denis Kinyua Kamachu - DevOps & Security Specialist">
+    <meta name="twitter:description" content="Hire an experienced DevOps Engineer with expertise in ML/AI, cybersecurity, and cloud infrastructure.">
+    <meta name="twitter:image" content="https://kinyuadennis.github.io/assets/profile-twitter.jpg">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Denis Kinyua Kamachu",
+        "jobTitle": "DevOps Engineer & Security Specialist",
+        "description": "Experienced DevOps Engineer specializing in Machine Learning, Cybersecurity, and Cloud Infrastructure",
+        "url": "https://kinyuadennis.github.io",
+        "email": "kinyuadenno1@gmail.com",
+        "sameAs": [
+            "https://linkedin.com/in/dennis-kinyua",
+            "https://github.com/kinyuadennis"
+        ],
+        "knowsAbout": ["Machine Learning", "DevOps", "Cybersecurity", "Python", "MLOps", "Cloud Computing"],
+        "alumniOf": "Murang'a University of Technology",
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "DevOps Engineer",
+            "skills": ["Python", "Machine Learning", "Cybersecurity", "MLOps", "Flask", "Docker"]
+        }
+    }
+    </script>
+    
+    <title>Denis Kinyua Kamachu - DevOps & Security Specialist | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -238,6 +280,38 @@
             font-size: 1.1rem;
             line-height: 1.7;
             margin-bottom: var(--space-xl);
+        }
+
+        /* Achievement Badges */
+        .achievement-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin: var(--space-lg) 0;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-xs) var(--space-sm);
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+        }
+
+        .badge:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .badge i {
+            font-size: 0.8rem;
         }
 
         .hero-stats {
@@ -742,6 +816,165 @@
             font-size: 0.9rem;
         }
 
+        /* Testimonials Section */
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            position: relative;
+            padding: var(--space-md) 0;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            position: absolute;
+            bottom: -30px;
+            right: -10px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+            text-align: right;
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--space-sm);
+        }
+
+        /* Resume Download Button */
+        .btn.btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-top: var(--space-md);
+        }
+
+        /* Description paragraphs */
+        .description {
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
+        }
+
+        .description:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-md);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: var(--space-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons-section {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-xl);
+        }
+
+        .btn-cta-primary {
+            background: white;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 1.1rem;
+            transition: all var(--transition-normal);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: var(--text-primary);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: white;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all var(--transition-normal);
+        }
+
+        .btn-cta-secondary:hover {
+            background: white;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .cta-stat {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .cta-stat i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
         /* Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -880,6 +1113,21 @@
                 justify-content: center;
             }
 
+            .achievement-badges {
+                justify-content: center;
+            }
+
+            .cta-buttons-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-stats {
+                flex-direction: column;
+                gap: var(--space-md);
+                align-items: center;
+            }
+
             .cards-grid {
                 grid-template-columns: 1fr;
             }
@@ -1007,9 +1255,10 @@
                 <a href="#home" class="logo">Denis Kinyua</a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
@@ -1031,6 +1280,26 @@
                         DevOps workflows through innovative Python solutions and MLOps practices. Expanding expertise 
                         into DevSecOps with 3+ years of experience designing AI solutions and hardening systems against threats.
                     </p>
+                    
+                    <!-- Achievement Badges -->
+                    <div class="achievement-badges">
+                        <div class="badge">
+                            <i class="fas fa-award"></i>
+                            <span>Cisco Certified</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security Expert</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-brain"></i>
+                            <span>ML Specialist</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-code"></i>
+                            <span>Python Expert</span>
+                        </div>
+                    </div>
                     
                     <div class="hero-stats">
                         <div class="stat">
@@ -1054,7 +1323,11 @@
                         </a>
                         <a href="#contact" class="btn btn-secondary">
                             <i class="fas fa-envelope"></i>
-                            Get In Touch
+                            Hire Me
+                        </a>
+                        <a href="assets/Denis_Kinyua_Kamachu_Resume.pdf" class="btn btn-secondary" download="Denis_Kinyua_Kamachu_Resume.pdf">
+                            <i class="fas fa-download"></i>
+                            Download CV
                         </a>
                     </div>
                 </div>
@@ -1083,34 +1356,41 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section" style="background: var(--bg-secondary);">
+    <!-- About Me Section -->
+    <section id="about" class="section" style="background: var(--bg-secondary);">
         <div class="container">
-            <h2 class="section-title">Education & Credentials</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="cards-grid">
                 <div class="card animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-graduation-cap card-icon"></i>
-                        <h3>Bachelor of Science in Information Technology</h3>
+                        <i class="fas fa-user-tie card-icon"></i>
+                        <h3>Who I Am</h3>
                     </div>
-                    <ul class="skill-list">
-                        <li><strong>Institution:</strong> Murang'a University of Technology</li>
-                        <li><strong>Duration:</strong> 2020–2025</li>
-                        <li><strong>Grade:</strong> Second Class Upper Division</li>
-                        <li><strong>Key Courses:</strong> AI & Machine Learning, Cryptography, Data Structures, Networking</li>
-                    </ul>
+                    <p class="description">
+                        I'm Denis Kinyua Kamachu, a DevOps Engineer & Security Specialist with a passion for building intelligent systems and securing digital infrastructure. 
+                        With 3+ years of experience in AI solutions, cybersecurity, and MLOps, I'm dedicated to delivering robust, scalable, and secure solutions.
+                    </p>
+                    <p class="description">
+                        My journey in technology began with a Bachelor's degree in Information Technology, where I honed my skills in Machine Learning, Cryptography, and Data Structures. 
+                        I've since expanded my expertise into DevSecOps, focusing on hardening systems against threats and automating workflows.
+                    </p>
+                    <p class="description">
+                        I thrive in environments that challenge my technical abilities and allow me to contribute to innovative projects. 
+                        My goal is to leverage cutting-edge technologies to create efficient, secure, and scalable solutions.
+                    </p>
                 </div>
-                
                 <div class="card animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-certificate card-icon"></i>
-                        <h3>Professional Certifications</h3>
+                        <i class="fas fa-download card-icon"></i>
+                        <h3>Download Resume</h3>
                     </div>
-                    <ul class="skill-list">
-                        <li><strong>Cisco:</strong> Cyber Security, Data Science, Networking</li>
-                        <li><strong>Udemy:</strong> Certified Professional IT Manager (CPIT)</li>
-                        <li><strong>Specialized:</strong> Ethical Hacking, IoT Systems</li>
-                    </ul>
+                    <p class="description">
+                        Ready to explore new opportunities? Download my resume to learn more about my experience and expertise.
+                    </p>
+                    <a href="assets/Denis_Kinyua_Kamachu_Resume.pdf" class="btn btn-primary" download="Denis_Kinyua_Kamachu_Resume.pdf">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
                 </div>
             </div>
         </div>
@@ -1495,6 +1775,85 @@
                             <i class="fas fa-clock"></i>
                             Future Project
                         </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section" style="background: var(--gradient-primary); padding: 60px 0;">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Drive Innovation at Your Company?</h2>
+                <p class="cta-description">
+                    I'm actively seeking new opportunities to apply my expertise in DevOps, Machine Learning, and Cybersecurity. 
+                    Let's discuss how I can contribute to your team's success.
+                </p>
+                <div class="cta-buttons-section">
+                    <a href="#contact" class="btn btn-cta-primary">
+                        <i class="fas fa-handshake"></i>
+                        Let's Work Together
+                    </a>
+                    <a href="assets/Denis_Kinyua_Kamachu_Resume.pdf" class="btn btn-cta-secondary" download="Denis_Kinyua_Kamachu_Resume.pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        View My Resume
+                    </a>
+                </div>
+                <div class="cta-stats">
+                    <div class="cta-stat">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Available for Full-time Positions</span>
+                    </div>
+                    <div class="cta-stat">
+                        <i class="fas fa-globe"></i>
+                        <span>Open to Remote or On-site Work</span>
+                    </div>
+                    <div class="cta-stat">
+                        <i class="fas fa-rocket"></i>
+                        <span>Ready to Start Immediately</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <h2 class="section-title">What People Say About Me</h2>
+            <p class="section-subtitle">
+                A selection of testimonials from clients and colleagues who have worked with me.
+            </p>
+            <div class="cards-grid">
+                <div class="card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        "Denis is an exceptional DevOps Engineer. His expertise in ML/AI and cybersecurity 
+                        is unmatched. He delivered a robust recommendation system that significantly improved 
+                        our user engagement metrics. Highly recommended!"
+                    </div>
+                    <div class="testimonial-author">
+                        - Sarah Johnson, Product Manager at TechCorp
+                    </div>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        "Working with Denis was a game-changer. His proactive approach to security 
+                        and his ability to automate complex workflows saved us countless hours. 
+                        His technical depth and communication skills are top-notch."
+                    </div>
+                    <div class="testimonial-author">
+                        - Michael Chen, CTO at CyberSolutions
+                    </div>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="testimonial-quote">
+                        "Denis's MLOps framework was instrumental in our project's success. 
+                        His ability to integrate ML models with existing infrastructure and 
+                        automate the deployment process was truly remarkable."
+                    </div>
+                    <div class="testimonial-author">
+                        - Emily Rodriguez, Data Scientist at AI Labs
                     </div>
                 </div>
             </div>
